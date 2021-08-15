@@ -11,7 +11,11 @@ export class HeaderComponent implements OnInit {
   title: string = 'Task Tracker';
   showAddTask: boolean = false;
   subscription: Subscription;
-  constructor(private uiService: UiService, private router: Router) {}
+  constructor(private uiService: UiService, private router: Router) {
+    // this.subscription = this.uiService
+    //   .onToggle()
+    //   .subscribe((value) => (this.showAddTask = value));
+  }
 
   ngOnInit(): void {
     this.subscription = this.uiService
