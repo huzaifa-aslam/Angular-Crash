@@ -12,6 +12,7 @@ import { TaskItemComponent } from './components/task-item/task-item.component';
 import { AddTaskComponent } from './components/add-task/add-task.component';
 import { AboutComponent } from './components/about/about.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { ReactiveFormsModule } from '@angular/forms';
 const appRoutes: Routes = [
   {
     path: '',
@@ -38,6 +39,7 @@ const appRoutes: Routes = [
     FontAwesomeModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(appRoutes, { enableTracing: true }),
   ],
   providers: [],

@@ -1,4 +1,4 @@
-<form *ngIf="showAddTask" (ngSubmit)="onSubmit()">
+<form *ngIf="showAddTask" (ngSubmit)="onSubmit()" [formGroup]="addTaskForm">
   <label for="text">Task</label>
   <input
     type="text"
@@ -6,8 +6,10 @@
     name="text"
     [(ngModel)]="text"
     placeholder="Add a task.."
+    formControlName="text"
   />
-
+  <span *ngIf="f?.invalid && f?.touched" class="error">Text is required</span
+  ><br />
   <label for="lname">Day & Time</label>
   <input
     type="text"
@@ -15,6 +17,7 @@
     name="day"
     [(ngModel)]="day"
     placeholder="day & time.."
+    formControlName="day"
   />
   <label>
     <input
@@ -22,6 +25,7 @@
       checked="checked"
       name="reminder"
       [(ngModel)]="reminder"
+      formControlName="reminder"
     />
     Remember
   </label>
